@@ -4,6 +4,8 @@ title: About
 permalink: /about
 ---
 
-# Portfolio Jekyll Theme
+# About
 
-This is a personal portfolio theme that I built from the ground up, using the [DevTips Starter Kit](http://devtipsstarterkit.com/) as a foundation for starting, and following closely the amazing tutorial by [Travis Neilson over at DevTips](https://www.youtube.com/watch?v=T6jKLsxbFg4&list=PL0CB3OvPhDA_STygmp3sDenx3UpdOMk7P). You can [check out the demo](lenpaul.github.io/portfolio-jekyll-theme/), and [fork the repository](https://github.com/LeNPaul/portfolio-jekyll-theme/fork), to get started.
+This website is a place to display and easily share past work and project I have contributed to over the course of my career. This website will be continuously updated as new achievements are made and as topics I find interesting are shared. See the Blog page for the latest news.
+
+This website is built using [Jekyll](https://jekyllrb.com/) which is a static site generator, and hosted via GitHub with their [Github Pages](https://pages.github.com/) feature. I am using the theme built by [Paul Le](https://github.com/LeNPaul) under the MIT License. You can view the source code for this website [here](https://github.com/Riley903/Riley903.github.io). 
