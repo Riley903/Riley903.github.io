@@ -19,6 +19,8 @@ I opened up the power supply and searched for the part number of the card-edge c
 
 ![](../assets/img/blogs/2022-12-18/Amphenol-Connector-Mate.jpg)
 
+(Source: "Straddle mount type Power edge connector", GS-12-279, FCI)
+
 From here I laid confirmed the outputs of the connector, added the switch, and laid out the PCB according to the recommended configuration. 
 
 ![](../assets/img/blogs/2022-12-18/KiCAD-2D-PCB.jpg)
