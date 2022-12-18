@@ -13,7 +13,7 @@ We therefore decided to quickly design a small adapter board that fit the power 
 
 ## Design Process
 
-We firstly decided that we wanted to convert the power section of card-edge connector to a thru-hole that allowed him to bolt wires too. In addition, a small ON/OFF switch that behaved as the jumper would give him ON/OFF control.
+We firstly decided that we wanted to convert the power section of card-edge connector to a thru-hole that allowed him to bolt wires to. In addition, a small ON/OFF switch that behaved as the jumper would give him ON/OFF control.
 
 I opened up the power supply and searched for the part number of the card-edge connector. This was fortunately an Amphenol part and it was easy to find proper documentation. Found in the datasheet was the recommended mating board edge configuration shown in the image below.
 
