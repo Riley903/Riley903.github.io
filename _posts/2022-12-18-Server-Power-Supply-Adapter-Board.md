@@ -3,7 +3,7 @@ layout: post
 title: "Adapter Board For Server Power Supply"
 ---
 
-My father happened across some very affordable server power supplies on Ebay and got two such that he could put them in parallel and get a 24V slim form-factor power supply. Server power supplies however are a little unlike typical SMPS due to them having a card-edge connector rather than terminal block. This card edge connector usually will have half of it sectioned off for power and half sectioned off for additional features to interact with the power supply such as ON/OFF control, a DC-OK signal, and some 3.3V and 5V connections. 
+My father happened across some very affordable server power supplies on Ebay and got two such that he could put them in series and get a 24V slim form-factor power supply. Server power supplies however are a little unlike typical SMPS due to them having a card-edge connector rather than terminal block. This card edge connector usually will have half of it sectioned off for power and half sectioned off for additional features to interact with the power supply such as ON/OFF control, a DC-OK signal, and some 3.3V and 5V connections. 
 
 Thus, when buying a second-hand generic server power supply online, it may not be so simple as being a plug-and-play device. Such is what my father experienced when buying two Artesyn Technologies model 7001134-Y000 REV L power supplies. He was unable to easily use them as they needed a card-edge connector to get safe access to the 12V output and a jumper to even turn it on.
 
