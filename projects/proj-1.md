@@ -5,13 +5,13 @@ title: 'Emergency Power System'
 
 Last updated: 19-Dec-2022
 
-### Introduction
+#### Introduction
 
 The emergency power system described here was been an ongoing project that has dabbled in system integration, electrical engineering, PCB design, additive manufacturing, programming, mechanical design, and CNC machining.
 
 The results of the project have been for the benefit of my parents, to provide a service that they sometimes have to be without. The development journey however has been more for my benefit since the problems encountered and challenges all have added to my engineering abilities. 
 
-### Table of Contents
+#### Table of Contents
 
 1. [Introduction](#introduction)
 2. [History](#history)
