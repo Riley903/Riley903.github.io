@@ -11,7 +11,7 @@ Thus, when buying a second-hand generic server power supply online, it may not b
 
 We therefore decided to quickly design a small adapter board that fit the power supply and give him ON/OFF control.
 
-## Design Process
+### Design Process
 
 We firstly decided that we wanted to convert the power section of card-edge connector to a thru-hole that allowed him to ring terminals to. In addition, a small switch that behaved as the jumper would give him ON/OFF control.
 
@@ -43,6 +43,6 @@ We got a set of 10 boards manufactured by JLCPCB and ordered up the little ON/OF
 
 ![](../assets/img/blogs/2022-12-18/Two-Plugged-In.jpg)
 
-## Conclusion
+### Conclusion
 
 This little project just goes to show how many design choices are made even to create a simple connector with an ON/OFF switch. In practice, it can be a balancing act to manage time and effort against necessary results. Over-engineering can be a slippery slope and can result in larger than expected costs. I have always had the engineering philosophy that the simplest solution is often the best and there is no need to over-complicate things. With that in mind though, great results are never achieved by implementing the bare minimum.

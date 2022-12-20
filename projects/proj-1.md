@@ -1,14 +1,62 @@
 ---
 layout: post
-title: 'Back-up Battery System'
+title: 'Emergency Power System'
 ---
+
+Last updated: 19-Dec-2022
+
+### Introduction
 
 This page is where I'll go into detail about the battery wall and it's history, functions, design process, and reasons why I beleive it added to my engineering abilities.
 
-Mauris velit metus, tempor gravida nulla eget, auctor accumsan tellus. Curabitur volutpat sed dolor quis tempus. In scelerisque aliquam felis at tincidunt. Proin non augue fringilla, [pretium justo vitae](#), maximus dui. Nunc ipsum nisi, fermentum sit amet volutpat cursus, sodales ac nisl. Quisque nec tellus sem. Cras pharetra felis non quam mollis, nec efficitur lectus aliquet. Maecenas ipsum felis, eleifend nec [semper venenatis](#), consequat ut nunc. Donec est augue, facilisis quis placerat sed, imperdiet sit amet neque. Maecenas nec risus metus. Nunc non condimentum ipsum. Phasellus consectetur dapibus massa, convallis iaculis nisi vestibulum id. Phasellus et fringilla augue. Donec consequat dui ut rutrum elementum. Aenean nisi arcu, ornare eu lacus vel, faucibus tempor tortor.
+- This is a work in progress.
+- Bullet point the topics to address.
+- 
+
+### History
+
+- How we got the batteries.
+- Why living in East Sooke presents challenges.
+- Existing water system.
+- 
+
+### Scope of the Project
+
+- Talk about the original scope of the project.
+- What the batteries will be used for.
+- Qualifying the battery cells.
+
+### Designing the System
+
+- How the cells and packs work. 
+- Methods to monitor the battery packs.
+- Methods of charging the battery packs.
+- Methods of evaluating the usable capacity of the cells.
+- Water pump system.
+- 
+
+### Sub-Systems
+
+- Talk in detail about the sub-systems.
+
+#### Analyser
+
+#### Pack Monitor
+
+#### Water System
+
+#### Pack Enclosures
+
+#### Charging System
+
+### Future Plans
+
+- Talk about how we plan to add the VP150 cells to the system
+- Talk about how we want to add an inverter for the house to the system
+- 
+
+![](../assets/img/projects/proj-1/CAD-ASSEMBLY.jpg)
+
+![](../assets/img/projects/proj-1/MVP.jpg)
 
 
-
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/dog.jpg" %}
-
-{% include image.html url="http://www.gratisography.com" image="projects/proj-1/wall.jpg" %}
