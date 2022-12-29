@@ -18,11 +18,12 @@ The results of the project have been for the benefit of my parents, to provide a
 3. [Scope of the Project](#scope-of-the-project)
 4. [Designing the System](#designing-the-system)
 5. [Sub-Systems](#sub-systems)
-    1. [Analyser](#analyser)
-    2. [Pack Monitor](#pack-monitor)
-    3. [Water System](#water-system)
-    4. [Pack Enclosures](#pack-enclosures)
-    5. [Charging System](#charging-system)
+    1. [SAFT NiCd Batteries](#saft-nicd-batteries)
+    2. [Analyser](#analyser)
+    3. [Pack Monitor](#pack-monitor)
+    4. [Water System](#water-system)
+    5. [Pack Enclosures](#pack-enclosures)
+    6. [Charging System](#charging-system)
 6. [Future Plans](#future-plans)
 
 #### History
@@ -51,6 +52,8 @@ Seems easy enough right? You'd be right. The principles behind our plan were sim
 - Water pump system.
 - 
 
+ 
+
 #### Sub-Systems
 
 - Talk in detail about the sub-systems.
@@ -59,11 +62,17 @@ Seems easy enough right? You'd be right. The principles behind our plan were sim
 
 The batteries we are using are discarded aircraft batteries, primarily SAFT VP400KH, VP150KH, and VP160KH NiCd cells. We also have a few russian cells removed from Kamov Helicopters, but not in a quantity suitable for large energy storage. The numbering used by SAFT (a French company) indicate what Amp-Hour you can expect the cell to capable of supplying. For example, the VP400KH battery cell will supply 40 Amp-Hours (Ah).
 
-NiCd batteries have many similarities with lead acid, they both operate in ranges of 1.2V-1.5V, they are constructed in a similar manner having a metalic substance immersed in an electrolyte, and they are both quite safe (they won't explode when exposed to oxygen). The NiCd batteries from SAFT have some pretty outstanding for several reasons, namely that they have an incredibly long storage life (some cells we have been using had notes on them indicating they were discarded in 1992), they can be and often are depleted to 0V without degrading the cell, they are desined to be serviced easily, you can visually determine the health of a cell by seeing the behaviour of the electrolyte when charging and discharging through the clear container, and they can easily pump out 50 times their rated capacity for short durations such as starting a turbine.
+NiCd batteries have many similarities with lead acid, they both operate in ranges of 1.2V-1.5V, they are constructed in a similar manner having a metalic substance immersed in an electrolyte, and they are both quite safe (they won't explode when exposed to oxygen). The NiCd batteries from SAFT are pretty outstanding for several reasons, namely that they have an incredibly long storage life (some cells we have been using had notes on them indicating they were discarded in 1992), they can be and often are depleted to 0V without degrading the cell, they are desined to be serviced easily, you can visually determine the health of a cell by seeing the behaviour of the electrolyte when charging and discharging through the clear container, and they can easily pump out 50 times their rated capacity for short durations such as starting a turbine of an aircraft.
 
 They do come with a few drawbacks however. NiCd cells can experience thermal run-away when charging or over-charging. If charged at a high rate (a high rate would be 1C or at a rated equal to 1 x Capacity, 40A for the VP400KH), if a cell is fully charged, the excess charging power is converted to heat. If too much heat is generated the cell itself will breakdown and begin shorting internally, leading to further heat generation until a run-away event occurs. Thus when charging these cells at a high rate of charge, it is important to monitor the cell's voltage. Fully charged cells that begin to convert the excess energy to heat will actually drop their voltage potential. The recommended charging system for NiCd includes what is called negative-delta-voltage (NDV) detection, where with change in time, a negative change in voltage indicates the cell is fully charged. This is a protection method that prevents the cell from entering a thermal run-away event when charging.
 
-A second drawback occurs when these cells are arranged in a pack. NiCd cells have a unique discharge curve where once below a certain charge threshold, the voltage potential across the cell drops dramatically to 0V. When the first cell in a NiCd pack is fully discharged and the pack is still supplying current, the cells neighbouring the deplted cell with drive the voltage potential across the depelted cell negative. This ends up converting the cells into a thick plume of smoke. Those who work with electronics far and wide know not to let the magic smoke out. So when using a pack of multiple cells, it is practice to disconnect the pack when the first cell is depleted which is at 1.0V in the case of SAFT NiCd cells. This protects the entire pack but it means the pack is only as capable as its worst cell. 
+A second drawback occurs when these cells are arranged in a pack. NiCd cells have a unique discharge curve where once below a certain charge threshold, the voltage potential across the cell drops dramatically to 0V. When the first cell in a NiCd pack is fully discharged and the pack is still supplying current, the cells neighbouring the deplted cell with drive the voltage potential across the depelted cell negative. This ends up converting the cells into a thick plume of smoke. Those who work with electronics far and wide know not to let the magic smoke out. So when using a pack of multiple cells, it is practice to disconnect the pack when the first cell is depleted, which is at 1.0V in the case of SAFT NiCd cells. This protects the entire pack but it means the pack is only as capable as the worst cell. Thus when evaluating the effective capacity of a cell when configured in a pack, a resistor ($1\Omega$, 10W) is placed across the terminals of a cell when it reaches 1.0V (a near depleted state) to burn off the remaining charge. When the cell depletes further to 0.5V, a shorting clip is placed over the terminals, effectively removing it from the pack. 
+
+Below is a graph showing the discharge curves of some SAFT VP160KH cells arranged in a 10-cell pack. Notice that there is an immediate decrease in voltage at the beginning from around 1.4V to around 1.2V and then a sudden drop in cell voltage from 1.0v to essentially 0V when the cell is fully depleted. The region between 1.2V and 1.0V is the usable region of the cell and it is quite noticeable by the duration at which it sustains those voltages. This graph was created using data I extracted from the pack using the analyser I designed. It is noticeable in this pack however, some cells become depleted around 4000s while others become depleted around 5000s, meaning these cells are not well suited to be in a pack together due to their dissimilar capacity. 
+
+![](../assets/img/projects/proj-1/Discharge-1.jpg)
+
+Thus to effectively use the cells and arrange them in packs, it is important to balance the pack by putting cells of similar capacity together. This encourages the likelihood of using all the capacity that each cell can provide before the first cell is depleted and the pack must be disconnected from the load. Analysing each cell and arranging packs of similar cells is therefore advised when using high capacity NiCd batteries.
 
 ### Analyser
 
