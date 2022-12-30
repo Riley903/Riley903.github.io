@@ -52,8 +52,6 @@ Seems easy enough right? You'd be right. The principles behind our plan were sim
 - Water pump system.
 - 
 
- 
-
 #### Sub-Systems
 
 - Talk in detail about the sub-systems.
@@ -76,7 +74,25 @@ Thus to effectively use the cells and arrange them in packs, it is important to 
 
 ### Analyser
 
-### Pack Monitor
+- Intro paragraph that leads into the MVP.
+
+Measuring the effective capacity of the cells is a requirement we set for ourselves such that we could group similar cells together. To evalutate the capacity of a cell, measured in watt-hours (Wh), one has to measure the voltage and current over the duration of the discharge curve. Simply multiplying the voltage (V) by the current (I) to get the power (W), then integrate or sum that power value for the discharge duration. To do this we monitored the voltage of each cell arranged in a 10-cell pack that was connected to a load, the current supplied to the load was monitored, and a reading was taken each second for the 3600 (1 hour) or more seconds it took to discharge the pack. The theory of this was initially and successfully tested with the prototype I designed and built shown in the image below. Once we were satisfied with the capabilities of each function of the analyser, I set about putting it in a more useful form-factor than the prototype.
+
+![](../assets/img/projects/proj-1/MVP.jpg)
+
+The voltage measurement compontent of the analyser is quite simple electrically, using a unity difference amplifier to measure the voltage difference between two points, in our case, the difference between the two cell terminals. The voltage difference is fed into a 10-bit or 12-bit analog to digital converter (ADC) where the value is converted to a legible value corresponding to the voltage. Using generic LM324 operational amplifier were suitable since it is a unity-gain amplification of nearly a steady-state signal. Ddin't care about offset-voltage since it's negligible to the battery voltage, didn't care about any frequency response characteristics, and didn't care about noise. No instrumentational op-amps required. The only thing I cared about was a wide supply range and input voltage range of the op-amps since it should be able to operate in the same voltage range as the battery pack (10V - 16V) and share a common groundw tihout damaging anything. We had plans that the pack itself could power the analyser which evaluating the cells, this proved unlikely to function properly though as when the cells become too deplted and the shorting clips are applied it would reduce the pack voltage to an unusable level.
+
+Monitoring the current of a battery pack is electronically an even more simple task than the voltage by using a current shunt. A current shunt is a resistor of a specified resistance value that produces a rated voltage difference across its terminals for a rated current. As an example, a 50A 75Mv shunt will produce a 75mV drop across the shunt when 50A of current is passed through it. A current shunt and current sense resistor are essentially the same thing, but in general a current shunt is larger and typically chassis mounted whereas a current sense resistor is surface-mount or through-hole mounted to a PCB. One thing to be vigilent of when using a current shunt or current sense resistor is how they are rated. Current shunts are designed for high-current amplications and are capable of currents well above their rated current. Current sense resistor mainly deal with smaller currents and are given a power rating. Be mindful of which one better suits your application. Regardless, a current shunt is much better suited for current monitoring of a large battery pack.
+
+Another method explored for monitoring the current of the battery pack was using a hall-effect sensor. A sensor such as the ACS712 is particularly useful since the output voltage is proportional to the current. Under most cases, the ACS712 would be more than adequate and easy to integrate, however to evaluate the 40Ah cells we had, we didn't feel comfortable passing 40A or 30A (the max rating of the ACS712) though a PCB. A shunt was easier for us to integrate into the analyser.
+
+With live access to the voltage and current of the pack and cells, taking a data point ever second was all that was required. To perform this task we initially started with a Arduino MEGA2560 since it had enough analog inputs for the voltage and current readings. We moved to a different form-factor of the MEGA2560 which reduced the price and the footprint.
+
+Using the Arduino framework, I wrote a program to take the cell voltage and current readings, display them on a simple 20x4 display, and record them to a SD. The data stored on the SD card are the cell voltages and current for each second of the discarge. This data can be easily imported into Excel or a python script to spit out the cell capacity with some clever math. Part of the objective to evalutate the cells is that it had to be a simple enough task that my dad could simply clear the SD card, plug the unit into the battery pack, perform a discharge cycle, remove the SD card and import the data into an Excel sheet that would give him a bettery rating. He can then organising them as he sees fit. This is how we are evaluating the cells.
+
+### Battery Packs
+
+ ![](../assets/img/projects/proj-1/CAD-ASSEMBLY.jpg)
 
 ### Water System
 
@@ -86,12 +102,10 @@ Thus to effectively use the cells and arrange them in packs, it is important to 
 
 #### Future Plans
 
-- Talk about how we plan to add the VP150 cells to the system
-- Talk about how we want to add an inverter for the house to the system
-- 
+- Talk about how we plan to add the VP150 cells to the system.
+- Talk about how we want to add an inverter for the house to the system.
+- Dummy Board.
 
-![](../assets/img/projects/proj-1/CAD-ASSEMBLY.jpg)
 
-![](../assets/img/projects/proj-1/MVP.jpg)
 
 
