@@ -37,9 +37,9 @@ My parents live in the middle of the woods at the end of a long tree-lined windi
 Being without heat or water can be difficult most would agree. Such were the opinions of my parents. So, with frequent power failures and a seemingly unlimited supply to electrical energy storage, the decision to make a power storage system with the batteries, which could power a water pump, and some basic amenities around the house such as the boiler's lighter and the in-floor water pumps, was a simple decision to make. Trouble is: How to actually do it and how to incorporate it well into the house? 
 
 The plan was simple:
-    1. Be able to power a water pump that could provide water pressure to the house,
-    2. use the batteries to power an inverter that could tie into the house's main breaker panel,
-    3. and charge the batteries when grid power is avaiable and automatically turn when it is not.
+1. Be able to power a water pump that could provide water pressure to the house.
+2. Use the batteries to power an inverter that could tie into the house's main breaker panel.
+3. Charge the batteries when grid power is avaiable and automatically turn on when it is not.
 
 Seems easy enough right? You'd be right. The principles behind our plan were simple, but between the two similar personalities of my father and I, we ended up over-engineering the problem and it has blown up into a project spanning several years and costing several thousand dollars. How long could a generator run on several thousand dollars' worth of gas I wonder? Regardless, we knew what we wanted, we knew we had the skills to accomplish it, all that was left was to get started.
 
