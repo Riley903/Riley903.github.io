@@ -88,7 +88,9 @@ Another method explored for monitoring the current of the battery pack was using
 
 With live access to the voltage and current of the pack and cells, taking a data point ever second was all that was required. To perform this task we initially started with a Arduino MEGA2560 since it had enough analog inputs for the voltage and current readings. We moved to a different form-factor of the MEGA2560 which reduced the price and the footprint.
 
-Using the Arduino framework, I wrote a program to take the cell voltage and current readings, display them on a simple 20x4 display, and record them to a SD. The data stored on the SD card are the cell voltages and current for each second of the discarge. This data can be easily imported into Excel or a python script to spit out the cell capacity with some clever math. Part of the objective to evalutate the cells is that it had to be a simple enough task that my dad could simply clear the SD card, plug the unit into the battery pack, perform a discharge cycle, remove the SD card and import the data into an Excel sheet that would give him a bettery rating. He can then organising them as he sees fit. This is how we are evaluating the cells.
+Using the Arduino framework, I wrote a program to take the cell voltage and current readings, display them on a simple 20x4 display, and record them to a SD. The data stored on the SD card are the cell voltages and current for each second of the discarge. This data can be easily imported into Excel or a python script to spit out the cell capacity with some clever math. Part of the objective to evalutate the cells is that it had to be a simple enough task that my dad could simply clear the SD card, plug the unit into the battery pack, perform a discharge cycle, remove the SD card and import the data into an Excel sheet that would give him a bettery rating. He can then organising them as he sees fit. This is how we are evaluating the cells. The analyser is shown in the image below.
+
+![](../assets/img/projects/proj-1/NiCd-Battery-Tester-PCB-Rev-3.jpg)
 
 ### Battery Packs
 
