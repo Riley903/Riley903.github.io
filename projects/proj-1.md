@@ -3,7 +3,7 @@ layout: post
 title: 'Emergency Power System'
 ---
 
-Last updated: 21-Dec-2022
+Last updated: 01-Jan-2023
 
 #### Introduction
 
@@ -20,10 +20,9 @@ The results of the project have been for the benefit of my parents, to provide a
 5. [Sub-Systems](#sub-systems)
     1. [SAFT NiCd Batteries](#saft-nicd-batteries)
     2. [Analyser](#analyser)
-    3. [Pack Monitor](#pack-monitor)
+    3. [Monitor and Battery Packs](#monitor-and-battery-packs)
     4. [Water System](#water-system)
-    5. [Pack Enclosures](#pack-enclosures)
-    6. [Charging System](#charging-system)
+    5. [Charging System](#charging-system)
 6. [Future Plans](#future-plans)
 
 #### History
@@ -74,8 +73,6 @@ Thus to effectively use the cells and arrange them in packs, it is important to 
 
 ### Analyser
 
-- Intro paragraph that leads into the MVP.
-
 Measuring the effective capacity of the cells is a requirement we set for ourselves such that we could group similar cells together. To evaluate the capacity of a cell, measured in watt-hours (Wh), one has to measure the voltage and current over the duration of the discharge curve. Simply multiplying the voltage (V) by the current (I) to get the power (W), then integrate or sum that power value for the discharge duration. To do this we monitored the voltage of each cell arranged in a 10-cell pack that was connected to a load, the current supplied to the load was monitored, and a reading was taken each second for the 3600 (1 hour) or more seconds it took to discharge the pack. The theory of this was initially and successfully tested with the prototype I designed and built shown in the image below. Once we were satisfied with the capabilities of each function of the analyser, I set about putting it in a more useful form-factor than the prototype.
 
 ![](../assets/img/projects/proj-1/MVP.jpg)
@@ -92,13 +89,26 @@ Using the Arduino framework, I wrote a program to take the cell voltage and curr
 
 ![](../assets/img/projects/proj-1/NiCd-Battery-Tester-PCB-Rev-3.jpg)
 
-### Battery Packs
+### Monitor and Battery Packs
+
+Our plan to arrange several packs into a "wall" of batteries that would be the electrical source to an inverter and a DC pump required measures to manage and protect the cells due to their unique behaviours. We needed the same abilities of the analyser plus some extra features to exist permanently with each pack that would manage the pack over long durations. We set the following design requirements:
+
+- Permanently attached to a 10-cell pack
+- Monitor the cells for over and under-voltage cases when charging and discharging
+- Give quick feedback about cell status when polled
+- Have controlled outputs for connection/disconnection
+
+Using the same electrical principles from the analyser, I designed a PCB that would be permanently fitted to a 10-cell pack. The cells and packs are quite large which provided plenty of room for circuit components and mechanical interfaces. The PCB sits on top of the pack using two main connections at the positive and negative terminals of the pack. It has springs that contact the links between the cells to get the individual cell voltages, it has two controlled outputs designed to operate relays, it has a momentary button that when depressed, lights up a strings of RGB LEDs that, depending on the colour, quickly shows the voltage level of the cell beneath the LED, a connection point for a simple volt-amp meter for the entire pack, and an ON/OFF switch which disconnects power to the logic devices.
+
+Due to the size of the pack, the PCBs themselves are quite large too, being 360mm long by 80mm wide. This posed a problem for us when first installing them onto the packs since the spring contacts meant to view the individual cell voltages were causing the PCB to flex. The PCB is only mounted to the pack at the two main terminals at either end of the pack, thus the springs caused the PCB to flex in the middle and gave inconsistent results due to poor or no contact of the middle springs. To get around this, I put four large mounting points on the PCB and attached a custom 3D printed enclosure over the PCB that was rigid enough to keep the PCB flat and provide a better distribution of force to the 9 springs. 
+
+The custom 3D printed enclosure thus ended up serving several purposes. Primarily it was meant to protect the electronics and prevent debris from causing shorts between the cells and also house the simple volt-amp meter of the pack. But also provide even force on the PCB and springs proved to be an effective and useful benefit of the enclosure. The enclosure does a great job of making the pack assembly look like a true product and really speaks volumes of the abilities of 3D printing for unique applications and low-volume manufacturing.
+
+The packs, as mentioned a few times, comprise of 10 cells slotted into a wooden enclosure to prevent swelling. The cells are arranged in series using thick copper links with a custom aluminum standoff/studs at the positive and negative terminals of the pack that the PCB and cover slot over. Then the cabling to connect the pack to the system can be bolted to the positive and negative studs. The image below shows the final pack assembly.
 
  ![](../assets/img/projects/proj-1/CAD-ASSEMBLY.jpg)
 
 ### Water System
-
-### Pack Enclosures
 
 ### Charging System
 
